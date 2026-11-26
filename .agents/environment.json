@@ -1,0 +1,3 @@
+{
+  "install": "sed -i '/case \\$- in/,/esac/d' ~/.bashrc 2>/dev/null || true && grep -qxF 'export ANDROID_HOME=/opt/android-sdk' ~/.bashrc || echo 'export ANDROID_HOME=/opt/android-sdk' >> ~/.bashrc && grep -qxF 'export ANDROID_SDK_ROOT=/opt/android-sdk' ~/.bashrc || echo 'export ANDROID_SDK_ROOT=/opt/android-sdk' >> ~/.bashrc && (command -v watchman >/dev/null 2>&1 || (sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq watchman)) && (command -v eas >/dev/null 2>&1 || npm install -g eas-cli) && ([ ! -f package.json ] || npm install --no-audit --no-fund)"
+}
