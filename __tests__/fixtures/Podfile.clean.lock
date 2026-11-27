@@ -1,0 +1,31 @@
+# Removed RNCAsyncStorage and RNCWebView for kiosk zero-disk isolation
+PODS:
+  - Airship (18.4.0):
+    - Airship/Core (= 18.4.0)
+  - Airship/Core (18.4.0)
+  - DoubleConversion (1.1.6)
+  - hermes-engine (0.76.5)
+  - KioskHost (1.0.0):
+    - React-Core
+  - React-Core (0.76.5):
+    - DoubleConversion (= 1.1.6)
+
+DEPENDENCIES:
+  - Airship (~> 18.4.0)
+  - KioskHost (from `../node_modules/@internal/kiosk-host`)
+  - React-Core (from `../node_modules/react-native/`)
+
+SPEC REPOS:
+  trunk:
+    - Airship
+    - DoubleConversion
+
+SPEC CHECKSUMS:
+  Airship: 1111111111111111111111111111111111111111
+  MMKV: deadbeefdeadbeefdeadbeefdeadbeefdeadbeef
+  RNCWebView: cafebabecafebabecafebabecafebabecafebabe
+  KioskHost: 2222222222222222222222222222222222222222
+
+PODFILE CHECKSUM: 9999999999999999999999999999999999999999
+
+COCOAPODS: 1.15.2

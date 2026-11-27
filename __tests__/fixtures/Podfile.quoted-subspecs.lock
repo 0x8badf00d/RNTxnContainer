@@ -1,0 +1,12 @@
+PODS:
+  - KioskHost (1.0.0)
+  - "MMKV/Core (1.3.9)":
+    - "React-Core"
+  - 'op-sqlite/SQLCipher' (7.1.0)
+  - "RNCWebView/Core" (= 13.12.2)
+  - "@react-native-async-storage/async-storage" (2.1.0)
+
+DEPENDENCIES:
+  - KioskHost
+
+COCOAPODS: 1.15.2

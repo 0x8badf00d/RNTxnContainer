@@ -1,0 +1,117 @@
+{
+  "name": "@internal/kiosk-host",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Native iOS Transaction Container & Kiosk Session Isolation Platform (v3.0) for React Native",
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/cjs/index.d.ts",
+  "bin": {
+    "check-kiosk-lockfile": "./scripts/check-kiosk-lockfile.mjs"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": "./dist/cjs/index.js"
+    },
+    "./memory-storage": {
+      "import": {
+        "types": "./dist/esm/memory-storage/index.d.ts",
+        "default": "./dist/esm/memory-storage/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/memory-storage/index.d.ts",
+        "default": "./dist/cjs/memory-storage/index.js"
+      },
+      "default": "./dist/cjs/memory-storage/index.js"
+    },
+    "./memory-storage/async-storage": {
+      "import": {
+        "types": "./dist/esm/memory-storage/asyncStorageShim.d.ts",
+        "default": "./dist/esm/memory-storage/asyncStorageShim.js"
+      },
+      "require": {
+        "types": "./dist/cjs/memory-storage/asyncStorageShim.d.ts",
+        "default": "./dist/cjs/memory-storage/asyncStorageShim.js"
+      },
+      "default": "./dist/cjs/memory-storage/asyncStorageShim.js"
+    },
+    "./memory-storage/mmkv": {
+      "import": {
+        "types": "./dist/esm/memory-storage/mmkvShim.d.ts",
+        "default": "./dist/esm/memory-storage/mmkvShim.js"
+      },
+      "require": {
+        "types": "./dist/cjs/memory-storage/mmkvShim.d.ts",
+        "default": "./dist/cjs/memory-storage/mmkvShim.js"
+      },
+      "default": "./dist/cjs/memory-storage/mmkvShim.js"
+    },
+    "./metro": {
+      "import": {
+        "types": "./dist/esm/metro/withKioskHost.d.ts",
+        "default": "./dist/esm/metro/withKioskHost.js"
+      },
+      "require": {
+        "types": "./dist/cjs/metro/withKioskHost.d.ts",
+        "default": "./dist/cjs/metro/withKioskHost.js"
+      },
+      "default": "./dist/cjs/metro/withKioskHost.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src/specs",
+    "scripts/check-kiosk-lockfile.mjs",
+    "ios",
+    "Sources",
+    "KioskHost.podspec",
+    "react-native.config.js"
+  ],
+  "codegenConfig": {
+    "name": "KioskHostSpecs",
+    "type": "modules",
+    "jsSrcsDir": "src/specs"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "clean": "node -e \"require('fs').rmSync('dist', { recursive: true, force: true })\"",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build:esm": "tsc -p tsconfig.json --rootDir src --module ES2022 --moduleResolution Bundler --outDir dist/esm && node -e \"require('fs').writeFileSync('dist/esm/package.json', JSON.stringify({ type: 'module' }, null, 2) + '\\n')\"",
+    "build:cjs": "tsc -p tsconfig.json --rootDir src --module CommonJS --moduleResolution Node10 --outDir dist/cjs && node -e \"require('fs').writeFileSync('dist/cjs/package.json', JSON.stringify({ type: 'commonjs' }, null, 2) + '\\n')\"",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "test": "jest && node --test __tests__/lockfileExports.test.mjs",
+    "check:lockfile": "node scripts/check-kiosk-lockfile.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-native": ">=0.76.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.15",
+    "typescript": "^5.8.3"
+  }
+}

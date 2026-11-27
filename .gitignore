@@ -1,0 +1,10 @@
+# Agent workspace metadata
+.agents/
+
+# Node / JS build artifacts
+node_modules/
+dist/
+
+# Swift / Xcode build artifacts
+.build/
+.swiftpm/

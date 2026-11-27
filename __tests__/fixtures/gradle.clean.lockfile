@@ -1,0 +1,10 @@
+# This is a Gradle generated file for dependency locking.
+# Manual edits can break the build and are not advised.
+# Removed com.tencent:mmkv and react-native-webview for kiosk zero-disk isolation
+androidx.core:core-ktx:1.13.1=compileClasspath,runtimeClasspath
+androidx.sqlite:sqlite:2.4.0=compileClasspath,runtimeClasspath
+com.facebook.fresco:fresco:3.2.0=compileClasspath,runtimeClasspath
+com.facebook.react:react-android:0.76.5=compileClasspath,runtimeClasspath
+com.squareup.okhttp3:okhttp:4.12.0=compileClasspath,runtimeClasspath
+com.urbanairship.android:urbanairship-fcm:18.4.0=compileClasspath,runtimeClasspath
+empty=annotationProcessor

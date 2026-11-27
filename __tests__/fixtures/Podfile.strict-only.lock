@@ -1,0 +1,17 @@
+PODS:
+  - KioskHost (1.0.0)
+  - RealmJS (12.14.0)
+  - WatermelonDB (0.27.1)
+  - RNFS (2.20.0)
+  - react-native-sqlite-storage (6.0.1)
+  - react-native-blob-util (0.19.11)
+
+DEPENDENCIES:
+  - KioskHost (from `../node_modules/@internal/kiosk-host`)
+  - RealmJS
+  - WatermelonDB
+  - RNFS
+  - react-native-sqlite-storage
+  - react-native-blob-util
+
+COCOAPODS: 1.15.2
