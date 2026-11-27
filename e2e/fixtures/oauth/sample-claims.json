@@ -1,0 +1,141 @@
+{
+  "_fixtureNotice": "NON-SECRET SYNTHETIC TEST FIXTURES ONLY — NOT REAL CREDENTIALS OR SIGNATURES",
+  "validAssociate": {
+    "claims": {
+      "iss": "https://auth.kiosk.example.test",
+      "aud": "pos-kiosk-ios-test",
+      "sub": "assoc-10042",
+      "name": "Alex Rivera",
+      "roles": ["cashier", "supervisor"],
+      "permissions": ["pos.checkout", "pos.void", "pos.refund"],
+      "store_id": "store-0421",
+      "iat": 1700000000,
+      "exp": 1700003600
+    },
+    "expectedProfile": {
+      "associateId": "assoc-10042",
+      "displayName": "Alex Rivera",
+      "roles": ["cashier", "supervisor"],
+      "permissions": ["pos.checkout", "pos.void", "pos.refund"],
+      "storeId": "store-0421"
+    },
+    "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0Iiwic3ViIjoiYXNzb2MtMTAwNDIiLCJuYW1lIjoiQWxleCBSaXZlcmEiLCJyb2xlcyI6WyJjYXNoaWVyIiwic3VwZXJ2aXNvciJdLCJwZXJtaXNzaW9ucyI6WyJwb3MuY2hlY2tvdXQiLCJwb3Mudm9pZCIsInBvcy5yZWZ1bmQiXSwic3RvcmVfaWQiOiJzdG9yZS0wNDIxIiwiaWF0IjoxNzAwMDAwMDAwLCJleHAiOjE3MDAwMDM2MDB9.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy12YWxpZC0wMQ"
+  },
+  "secondAssociate": {
+    "claims": {
+      "iss": "https://auth.kiosk.example.test",
+      "aud": "pos-kiosk-ios-test",
+      "sub": "assoc-20099",
+      "name": "Jordan Chen",
+      "roles": ["cashier"],
+      "permissions": ["pos.checkout"],
+      "store_id": "store-0421",
+      "iat": 1700004000,
+      "exp": 1700007600
+    },
+    "expectedProfile": {
+      "associateId": "assoc-20099",
+      "displayName": "Jordan Chen",
+      "roles": ["cashier"],
+      "permissions": ["pos.checkout"],
+      "storeId": "store-0421"
+    },
+    "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0Iiwic3ViIjoiYXNzb2MtMjAwOTkiLCJuYW1lIjoiSm9yZGFuIENoZW4iLCJyb2xlcyI6WyJjYXNoaWVyIl0sInBlcm1pc3Npb25zIjpbInBvcy5jaGVja291dCJdLCJzdG9yZV9pZCI6InN0b3JlLTA0MjEiLCJpYXQiOjE3MDAwMDQwMDAsImV4cCI6MTcwMDAwNzYwMH0.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy12YWxpZC0wMg"
+  },
+  "missingAssociateId": {
+    "claims": {
+      "iss": "https://auth.kiosk.example.test",
+      "aud": "pos-kiosk-ios-test",
+      "name": "Missing Sub User",
+      "roles": ["cashier"],
+      "permissions": ["pos.checkout"],
+      "store_id": "store-0421",
+      "iat": 1700000000,
+      "exp": 1700003600
+    },
+    "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0IiwibmFtZSI6Ik1pc3NpbmcgU3ViIFVzZXIiLCJyb2xlcyI6WyJjYXNoaWVyIl0sInBlcm1pc3Npb25zIjpbInBvcy5jaGVja291dCJdLCJzdG9yZV9pZCI6InN0b3JlLTA0MjEiLCJpYXQiOjE3MDAwMDAwMDAsImV4cCI6MTcwMDAwMzYwMH0.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy1uby1zdWI"
+  },
+  "emptyAssociateId": {
+    "claims": {
+      "iss": "https://auth.kiosk.example.test",
+      "aud": "pos-kiosk-ios-test",
+      "sub": "   ",
+      "name": "Blank Sub User",
+      "roles": ["cashier"],
+      "permissions": [],
+      "store_id": "store-0421",
+      "iat": 1700000000,
+      "exp": 1700003600
+    },
+    "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0Iiwic3ViIjoiICAgIiwibmFtZSI6IkJsYW5rIFN1YiBVc2VyIiwicm9sZXMiOlsiY2FzaGllciJdLCJwZXJtaXNzaW9ucyI6W10sInN0b3JlX2lkIjoic3RvcmUtMDQyMSIsImlhdCI6MTcwMDAwMDAwMCwiZXhwIjoxNzAwMDAzNjAwfQ.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy1lbXB0eS1zdWI"
+  },
+  "missingStoreId": {
+    "claims": {
+      "iss": "https://auth.kiosk.example.test",
+      "aud": "pos-kiosk-ios-test",
+      "sub": "assoc-10043",
+      "name": "No Store User",
+      "roles": ["cashier"],
+      "permissions": ["pos.checkout"],
+      "iat": 1700000000,
+      "exp": 1700003600
+    },
+    "jwt": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0Iiwic3ViIjoiYXNzb2MtMTAwNDMiLCJuYW1lIjoiTm8gU3RvcmUgVXNlciIsInJvbGVzIjpbImNhc2hpZXIiXSwicGVybWlzc2lvbnMiOlsicG9zLmNoZWNrb3V0Il0sImlhdCI6MTcwMDAwMDAwMCwiZXhwIjoxNzAwMDAzNjAwfQ.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy1uby1zdG9yZQ"
+  },
+  "malformedJwts": {
+    "empty": "",
+    "singleSegment": "not-a-jwt",
+    "twoSegments": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJhc3NvYy0xMDA0MiJ9",
+    "fourSegments": "a.b.c.d",
+    "invalidBase64Payload": "eyJhbGciOiJSUzI1NiJ9.!!!not_valid_base64!!!.Zml4dHVyZS1zaWc",
+    "nonJsonPayload": "eyJhbGciOiJSUzI1NiJ9.bm90LWpzb24.Zml4dHVyZS1zaWc",
+    "arrayPayload": "eyJhbGciOiJSUzI1NiJ9.WzEsMiwzXQ.Zml4dHVyZS1zaWc"
+  },
+  "oauthTokenResponses": {
+    "initialExchange": {
+      "access_token": "fixture-access-token-initial-001",
+      "token_type": "Bearer",
+      "expires_in": 300,
+      "refresh_token": "fixture-refresh-token-initial-001",
+      "id_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImZpeHR1cmUtdGVzdC1rZXktMDEifQ.eyJpc3MiOiJodHRwczovL2F1dGgua2lvc2suZXhhbXBsZS50ZXN0IiwiYXVkIjoicG9zLWtpb3NrLWlvcy10ZXN0Iiwic3ViIjoiYXNzb2MtMTAwNDIiLCJuYW1lIjoiQWxleCBSaXZlcmEiLCJyb2xlcyI6WyJjYXNoaWVyIiwic3VwZXJ2aXNvciJdLCJwZXJtaXNzaW9ucyI6WyJwb3MuY2hlY2tvdXQiLCJwb3Mudm9pZCIsInBvcy5yZWZ1bmQiXSwic3RvcmVfaWQiOiJzdG9yZS0wNDIxIiwiaWF0IjoxNzAwMDAwMDAwLCJleHAiOjE3MDAwMDM2MDB9.Zml4dHVyZS1ub24tc2VjcmV0LXNpZy12YWxpZC0wMQ",
+      "scope": "openid profile pos.transactions"
+    },
+    "refreshed": {
+      "access_token": "fixture-access-token-refreshed-002",
+      "token_type": "Bearer",
+      "expires_in": 300,
+      "refresh_token": "fixture-refresh-token-refreshed-002",
+      "scope": "openid profile pos.transactions"
+    },
+    "shortLivedProactiveRefresh": {
+      "access_token": "fixture-access-token-short-003",
+      "token_type": "Bearer",
+      "expires_in": 25,
+      "refresh_token": "fixture-refresh-token-short-003",
+      "scope": "openid profile pos.transactions"
+    }
+  },
+  "oauthErrors": {
+    "invalidGrant": {
+      "httpStatus": 400,
+      "body": {
+        "error": "invalid_grant",
+        "error_description": "Refresh token expired or revoked (synthetic test fixture)"
+      }
+    },
+    "invalidToken": {
+      "httpStatus": 400,
+      "body": {
+        "error": "invalid_token",
+        "error_description": "Token unrecognized or already revoked (synthetic test fixture)"
+      }
+    },
+    "serverError": {
+      "httpStatus": 503,
+      "body": {
+        "error": "temporarily_unavailable",
+        "error_description": "PingFederate temporarily unavailable (synthetic test fixture)"
+      }
+    }
+  }
+}

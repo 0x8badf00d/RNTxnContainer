@@ -1,0 +1,87 @@
+{
+  "_fixtureNotice": "NON-SECRET SYNTHETIC TIME & ATTENDANCE TEST FIXTURES",
+  "clockedIn": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"CLOCKED_IN\",\"associateId\":\"assoc-10042\",\"storeId\":\"store-0421\",\"checkedAtUtc\":\"2026-11-26T18:00:00Z\"}",
+    "body": {
+      "status": "CLOCKED_IN",
+      "associateId": "assoc-10042",
+      "storeId": "store-0421",
+      "checkedAtUtc": "2026-11-26T18:00:00Z"
+    }
+  },
+  "clockedOut": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"CLOCKED_OUT\",\"associateId\":\"assoc-10042\",\"storeId\":\"store-0421\",\"checkedAtUtc\":\"2026-11-26T22:00:00Z\"}",
+    "body": {
+      "status": "CLOCKED_OUT",
+      "associateId": "assoc-10042",
+      "storeId": "store-0421",
+      "checkedAtUtc": "2026-11-26T22:00:00Z"
+    }
+  },
+  "clockedInLowercase": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"clocked_in\"}",
+    "body": {
+      "status": "clocked_in"
+    }
+  },
+  "clockedOutLowercase": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"clocked_out\"}",
+    "body": {
+      "status": "clocked_out"
+    }
+  },
+  "clockedInMixedCase": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"Clocked_In\"}",
+    "body": {
+      "status": "Clocked_In"
+    }
+  },
+  "invalidStatus": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\":\"ON_BREAK_UNKNOWN\"}",
+    "body": {
+      "status": "ON_BREAK_UNKNOWN"
+    }
+  },
+  "missingStatusField": {
+    "httpStatus": 200,
+    "rawBody": "{\"associateId\":\"assoc-10042\"}",
+    "body": {
+      "associateId": "assoc-10042"
+    }
+  },
+  "emptyJsonObject": {
+    "httpStatus": 200,
+    "rawBody": "{}",
+    "body": {}
+  },
+  "emptyBody": {
+    "httpStatus": 200,
+    "rawBody": ""
+  },
+  "malformedJson": {
+    "httpStatus": 200,
+    "rawBody": "{\"status\": \"CLOCKED_IN\""
+  },
+  "serverUnavailable": {
+    "httpStatus": 503,
+    "rawBody": "{\"error\":\"service_unavailable\",\"message\":\"Timeclock service temporarily unreachable\"}",
+    "body": {
+      "error": "service_unavailable",
+      "message": "Timeclock service temporarily unreachable"
+    }
+  },
+  "unauthorized": {
+    "httpStatus": 401,
+    "rawBody": "{\"error\":\"unauthorized\",\"message\":\"Access token expired\"}",
+    "body": {
+      "error": "unauthorized",
+      "message": "Access token expired"
+    }
+  }
+}
